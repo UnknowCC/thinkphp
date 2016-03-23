@@ -33,7 +33,7 @@ class ReadHtmlCacheBehavior
     }
 
     // 判断是否需要静态缓存
-    private static function requireHtmlCache()
+    private function requireHtmlCache()
     {
         // 分析当前的静态规则
         $htmls = C('HTML_CACHE_RULES'); // 读取静态规则
@@ -114,7 +114,7 @@ class ReadHtmlCacheBehavior
      * @param integer $cacheTime  缓存有效期
      * @return boolean
      */
-    public static function checkHTMLCache($cacheFile = '', $cacheTime = '')
+    public function checkHTMLCache($cacheFile = '', $cacheTime = '')
     {
         if (!is_file($cacheFile) && 'sae' != APP_MODE) {
             return false;
